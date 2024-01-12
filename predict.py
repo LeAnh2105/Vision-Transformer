@@ -94,14 +94,14 @@ def print_confusion_matrix(true_labels, predicted_labels, class_names):
     
 if __name__ == "__main__":
     # Gán cứng đường dẫn cho thư mục mô hình
-    model_folder = 'C:\\Users\\admin\\Desktop\\vit\\.output'
+    model_folder = 'C:\\Users\\admin\\Desktop\\vit\\.output' #Thay đổi đường dẫn đến thư mục mô hình
 
     # Tải mô hình đã đào tạo sử dụng các đối tượng tùy chỉnh (bộ tối ưu AdamW)
     custom_objects = {'AdamW': AdamW}
     model = load_model(model_folder, custom_objects=custom_objects)
 
     # Gán cứng đường dẫn cho thư mục gốc chứa các thư mục lớp
-    test_root_folder = 'C:\\Users\\admin\\Desktop\\vit\\test'
+    test_root_folder = 'C:\\Users\\admin\\Desktop\\vit\\test' # Thay đổi đường dẫn đến thư mục kiểm tra test
 
     # Đánh giá tất cả các lớp và tính độ chính xác từng lớp và độ chính xác tổng
     class_accuracies, all_true_labels, all_predicted_labels, correct_predictions_total, total_samples_total = evaluate_all_classes(test_root_folder, model, class_names)
